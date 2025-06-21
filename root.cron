@@ -1,0 +1,4 @@
+# Chef Name: check cassandra exporter filesize
+# */60 * * * * /opt/aa/site_1.0/installs/prometheus/prometheus_exporters/cassandra_exporter_filesize_collector.sh
+# Chef Name: check chef-client version
+0 9 * * 0 /opt/aa/site_1.0/installs/prometheus/prometheus_exporters/chef_crontab_collector.sh
