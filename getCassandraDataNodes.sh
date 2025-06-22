@@ -10,6 +10,6 @@ if [ "$2." = "." ]; then
 	exit
 fi
 
-nodetool -u rsacassandra -pw XCyota01! getendpoints -- $1 $2 $3
+nodetool -u cassandra -pw *******! getendpoints -- $1 $2 $3
 
 
