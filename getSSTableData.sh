@@ -21,7 +21,7 @@ sudo rm -rf *
 
 # On that node find which SSTables contain the record
 # Copy the sstable files to another directory
-SStables=`nodetool -u rsacassandra -pw XCyota01! getsstables -- $1 $2 $3`
+SStables=`nodetool -u cassandra -pw ****** getsstables -- $1 $2 $3`
 for oneTable in $SStables
 do
 	length=`expr length $oneTable`
