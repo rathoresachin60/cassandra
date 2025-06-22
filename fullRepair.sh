@@ -1,3 +1,3 @@
 #!/bin/bash
-nodetool -u rsacassandra -pw XCyota01! repair -pr -- $1 $2
+nodetool -u rsacassandra -pw ****** repair -pr -- $1 $2
 
