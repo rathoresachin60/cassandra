@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ $USER != russell.waliszewski ]; then
-        echo "This MUST be run as russell.waliszewski"
+if [ $USER != sachin.rathore ]; then
+        echo "This MUST be run as sachin.rathore
         exit
 fi
 
