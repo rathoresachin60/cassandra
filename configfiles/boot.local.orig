@@ -1,0 +1,34 @@
+#! /bin/bash
+#Disables the kernel hugepage parameter
+if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
+   echo never > /sys/kernel/mm/transparent_hugepage/enabled
+fi
+
+#Disables the kernel hugepage defrag parameter
+if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
+   echo never > /sys/kernel/mm/transparent_hugepage/defrag
+fi
+
+for dev in /sys/block/sd[c-z]; do
+	# Select deadline scheduler first
+	if test -f $dev/queue/scheduler ; then
+		echo deadline > $dev/queue/scheduler
+	fi
+
+	#Set the Rotational parameter to 0 - SSD
+	if test -f $dev/queue/rotational ; then
+	#	echo 1 > $dev/queue/rotational
+		echo 0 > $dev/queue/rotational
+	fi
+
+	#Set the read_ahead parameter to 4k
+	if test -f $dev/queue/read_ahead_kb ; then
+		echo 8 > $dev/queue/read_ahead_kb
+	fi
+
+	#Set the nr_requests parameter to 256k
+	if test -f $dev/queue/nr_requests ; then
+		echo 128 > $dev/queue/nr_requests
+	fi
+done
+
