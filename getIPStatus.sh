@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ $USER != russell.waliszewski ]; then
-	echo "This MUST be run as russell.waliszewski"
+if [ $USER != sachin.rathore ]; then
+	echo "This MUST be run as sachin.rathore"
 	exit
 fi
 
@@ -10,5 +10,5 @@ if [ "$1." = "." ]; then
 	exit
 fi
 
-nodetool -u rsacassandra -pwf ~/.local/.cp status |grep "$1 " | sort -n |awk '{ printf  "%s\n", $1 }'
+nodetool -u cassandra -pwf ~/.local/.cp status |grep "$1 " | sort -n |awk '{ printf  "%s\n", $1 }'
 
