@@ -19,10 +19,10 @@ if [ "$4." != "." ]; then
 	echo "Copying file to server: $1"
 fi
 
-scp $2 russell.waliszewski@$1:$3/.
+scp $2 sachin.rathore@$1:$3/.
 
 if [ "$?" != 0 ]; then
         echo "Failed copying to server:"
-        ssh -q russell.waliszewski@$1 'uname -n'
+        ssh -q sachin.rathore@$1 'uname -n'
 fi
 
