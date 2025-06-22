@@ -16,7 +16,7 @@ newRunStarted=0
 export FromUser="repair@"`uname -n`".com"
 
 getKeyspaceTables() {
-	cqlsh -u rsacassandra -p XCyota01! -e "select table_name from system_schema.tables where keyspace_name='$tenant';" |  sed 's/ //g' | sed '1,3 d' |head -n -2 |sort > $tenant.tables
+	cqlsh -u rsacassandra -p *******! -e "select table_name from system_schema.tables where keyspace_name='$tenant';" |  sed 's/ //g' | sed '1,3 d' |head -n -2 |sort > $tenant.tables
 }
 
 createNodeTenantTables() {
